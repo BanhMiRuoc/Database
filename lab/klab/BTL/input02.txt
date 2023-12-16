@@ -1,0 +1,15 @@
+SINHVIEN
+MaSV, HoTen, NgaySinh, GioiTinh, DiaChi, Ho, Ten, NamSinh, ThangSinh
+MaSV -> HoTen, NgaySinh, GioiTinh, DiaChi, Ho, Ten, NamSinh, ThangSinh; HoTen -> Ho, Ten; NgaySinh -> NamSinh, ThangSinh
+
+LOP
+MaLop, TenLop, NienKhoa, NamVaoTruong, NamRaTruong
+MaLop -> TenLop, NienKhoa, NamVaoTruong, NamRaTruong; NienKhoa -> NamVaoTruong, NamRaTruong
+
+MONHOC
+MaMH, TenMH, SoTinChi, SoChiThucHanh, SoChiLyThuyet
+MaMH -> TenMH, SoTinChi, SoChiLyThuyet, SoChiThucHanh; SoTinChi -> SoChiLyThuyet, SoChiThucHanh
+
+GIANGVIEN
+MaGV, TenGV, ChuyenNganh
+MaGV -> TenGV, ChuyenNganh

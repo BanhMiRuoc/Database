@@ -1,0 +1,13 @@
+MonHoc: maMH, tenMH, tinChi
+Diem: maSV, maMH, hocKy, diemTongKet
+SinhVien: maSV, tenSV, gioiTinh, ngaySinh, maLop
+Lop: maLop, tenLop, maKhoa
+Khoa: maKhoa, tenKhoa
+TheSinhVien: maSV, tenSV, ngayHetHan
+========================================
+(n-n): MonHoc - SinhVien
+(1-n): MonHoc - Diem
+(1-n): SinhVien - Diem
+(1-n): Khoa - Lop
+(1-1): SinhVien - TheSinhVien
+(Ch-C): SinhVien - TheSinhVien
