@@ -1,0 +1,77 @@
+- - - DATABASE ÔN CUỐI KỲ - - -
+
+1. CAST: chuyển đổi kiểu dữ liệu của biểu thức
+
+syntax: CAST (<BT> AS <DTT>)
+
+2. CONVERT: chuyển đổi kiểu dữ liệu của biểu thức theo định dạng
+
+syntax: CONVERT(DTT, Biểu thức, format)
+
+mm/dd/yy: 101
+dd/mm/yy: 103
+
+3. STR: chuyển đổi số sang chuỗi
+
+syntax: STR(<số thực<,<số ký tự>,[số lẻ])
+
+STR(12.5, 10, 2) -> _ _ _ _ _ 12.50
+
+4. DATEADD: Cộng thời gian
+
+syntax: DATEADD(<đơn vị thời gian>, số nguyên, ngày chỉ định)
+
+nếu tang  them 10 ngày: DATEADD(dd, 10, '12/03/2007')
+
+5. DATEDIFF: Trừ thời gian
+
+DATEDIFF( đơn vị, ngày 1, ngày 2) -> ngày 1 trừ ngày 2
+
+6.GETDATE: lấy ngày giờ hiện tại
+
+syntax: getdate()
+
+7. DATENAME: lấy thứ
+
+syntax: datename (đơn vị thời gian, ngày chỉ định)
+
+8. DATEPART: trả về số nguyên của thời gian
+
+syntax: datepart(đơn vị tg, ngày chỉ định)
+
+9.  DAY, MONTH, YEAR
+
+10. ABS() -> giá trị tuyệt đối
+11. PI() -> số pi
+12. POWER(số,số mũ) -> luỹ thừa
+13.RAND() ->random số
+14. ROUND(số, làm tròn)
+15.SQRT() -> căn bậc 2
+
+
+16. FIND(ký tự, chuỗi): tìm ký tự trong chuỗi
+
+17. CharIndex(ký tự, chuỗi): trả về vị trí ký tự đầu tiên trong chuỗi
+
+18. UPPER(), LOWER()
+
+19. Left(chuỗi nguồn, số ký tự), right(chuỗi nguồn, số ký tự), subtring(chuỗi nguồn, vị trí, số ký tự)
+
+20. Ltrim, Rtrim(chuỗi) cắt bỏ khoảng trắng ở đầu hoặc cuối
+
+21. space(số): tạo ra số khoảng trắng
+
+22. replicate(chuỗi, số): lặp chuỗi với số lần
+
+23.len(chuỗi)
+
+24.reverse(chuỗi): đảo chuỗi
+
+25. stuff(chuỗi nguồn, vị trí thay, chiều dài, chuỗi muốn thay):thay chuỗi muốn thay từ vị trí thay của chuỗi nguồn với chiều dài
+
+26. replace(chuỗi nguồn, chuỗi tìm, chuỗi thay)
+
+27. char(số nguyên)
+
+
+
