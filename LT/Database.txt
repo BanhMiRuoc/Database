@@ -1,0 +1,71 @@
+CREATE DATABASE QUANLYLICHDAY
+
+USE QUANLYLICHDAY
+
+
+set dateformat dmy
+CREATE TABLE Users(
+	User_ID INT PRIMARY KEY IDENTITY,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    Password VARCHAR(50) NOT NULL,
+    User_Email VARCHAR(50) NOT NULL UNIQUE,
+)
+CREATE TABLE User_Info (
+    User_ID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Birth DATE,
+    Gender NVARCHAR(4),
+    Address NVARCHAR(255),
+    CCCD VARCHAR(20),
+    PhoneNum VARCHAR(10),
+    FOREIGN KEY (User_ID) REFERENCES Users(User_ID)
+);
+CREATE TABLE Class(
+	Class_ID INT PRIMARY KEY IDENTITY,
+	Class_Name NVARCHAR(100),
+	Status NVARCHAR(30),
+	Shift_ID INT FOREIGN KEY REFERENCES Shift(Shift_ID),
+	User_ID INT FOREIGN KEY REFERENCES Users(User_ID),
+	DayOfClass DATE
+)
+CREATE TABLE Shift(
+	Shift_ID INT PRIMARY KEY IDENTITY,
+	Shift_BeginTime Time(0),
+	Shift_EndTime Time(0)
+)
+Drop table Shift
+-- Insert data into Users table
+INSERT INTO Users (Username, Password, User_Email) VALUES
+	('admin','123', 'letuankiet251981@gmail.com'),
+	('user1', 'password1', 'user1@example.com'),
+	('user2', 'password2', 'user2@example.com'),
+	('user3', 'password3', 'user3@example.com'),
+	('user4', 'password4', 'user4@example.com')
+
+-- Insert data into User_Info table
+INSERT INTO User_Info (User_ID, Name, Birth, Gender, Address, CCCD, PhoneNum) VALUES
+(2, N'John Doe', '1990-01-01', N'Nam', N'123 Main St', '1234567890', '1234567890'),
+(3, N'Jane Smith', '1995-02-15', N'Nữ', N'456 Elm St', '0987654321', '0987654321'),
+(4, N'Alice Johnson', '1985-03-25', N'Nữ', N'789 Oak St', '1357924680', '1357924680'),
+(5, N'Bob Williams', '1980-04-10', N'Nam', N'101 Maple St', '0246813579', '0246813579'),
+(1, N'Lê Tuấn Kiệt', '2004-06-10', N'Nam', N'468, Lê Trọng Tấn', '079204011598', '0907243698');
+
+-- Insert data into Class table
+INSERT INTO Class (Status, Class_Name, Shift_ID, User_ID, DayOfClass) VALUES
+	(N'Đã dạy', N'Toán', 1, 1, '31-03-2024'),
+	(N'Đã dạy', N'Toán', 2, 1, '01-04-2024'),
+	(N'Chưa dạy', N'Toán', 3, 1, '04-04-2024'),
+	(N'Chưa dạy', N'Toán', 4, 1, '04-04-2024'),
+	(N'Chưa dạy', N'Toán', 5, 1, '04-04-2024');
+INSERT INTO Shift VALUES
+	('06:50:00', '09:20:00'),
+	('09:30:00', '12:00:00'),
+	('12:45:00', '15:15:00'),
+	('15:25:00', '17:55:00'),
+	('18:05:00', '20:35:00')
+SELECT * FROM CLASS
+SELECT Class_Name, Shift_ID, FORMAT(DayOfClass, 'yyyy-MM-dd') as Day, Status
+                            FROM Users U, (SELECT * from Class Where DayOfClass > '2024-03-30' AND DayOfClass < '2024-04-10' ) as Class
+                            WHERE U.User_ID = Class.User_ID and U.Username = 'admin'
+DECLARE @date Date = '25/12/2024';
+select @date as Date
